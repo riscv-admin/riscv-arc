@@ -1,0 +1,72 @@
+name: Specification Architecture Review Request
+description: A structured form for submitting a request for Architecture Review of a specification, ensuring all necessary information is provided for a comprehensive evaluation by the review team.
+title: "[Spec Architecture Review Request] - ADD A SPECIFICATION TITLE HERE"
+labels: ["REQUESTED"]
+assignees:
+  - rpsene
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Specification Architecture Review Request
+  - type: input
+    id: spec_tittle
+    attributes:
+      label: Specification Tittle
+      description: Enter the title of the specification.
+    validations:
+      required: true
+  - type: dropdown
+    id: fast_track
+    attributes:
+      label: Is this a Fast-Track?
+      multiple: false
+      options:
+        - "YES"
+        - "NO"
+  - type: dropdown
+    id: isa_nonisa
+    attributes:
+      label: Is this a ISA or NON-ISA?
+      multiple: false
+      options:
+        - "ISA"
+        - "NON-ISA"
+  - type: textarea
+    id: spec_summary
+    attributes:
+      label: Specification Summary
+      description: Provide a concise overview of the specification, highlighting its main objectives, key features, and intended applications. This summary will help reviewers understand the scope and purpose of the specification, enabling a more efficient evaluation process.
+    validations:
+        required: true
+  - type: dropdown
+    id: committee
+    attributes:
+      label: Parent Committee
+      description: This typically is an ISA Committee (e.g. Unpriv or Priv IC) or an Horizontal Committee (e.g. Software or ISA Infrastructure HC).
+      options:
+        - Privileged Spec IC
+        - Unprivileged Spec IC
+        - Application & Tools HC
+        - ISA Infrastructure HC
+        - Privileged Software HC
+        - Security HC
+        - SOC Infrastructure HC
+        - Technology HC
+    validations:
+      required: true
+  - type: textarea
+    id: spec_file
+    attributes:
+      label: Upload Specification File
+      description: Upload the latest version of the specification document as a PDF or other relevant file format.
+      placeholder: Upload the PDF by dragging and dropping it here, or alternatively, provide a link to the file.
+    validations:
+        required: true
+  - type: textarea
+    id: spec_notes
+    attributes:
+      label: Note for Reviewers
+      description: Include any additional context, concerns, or guidance that may assist reviewers in evaluating the specification. This may cover specific areas that require close attention, potential challenges, or any other relevant information that can help reviewers make informed decisions and provide valuable feedback.
+    validations:
+        required: false
